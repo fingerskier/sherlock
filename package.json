@@ -1,0 +1,23 @@
+{
+  "name": "sherlock",
+  "version": "1.0.0",
+  "description": "An LSTM that writes Sherlock Holmes stories.",
+  "main": "sherlock.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fingerskier/sherlock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fingerskier/sherlock/issues"
+  },
+  "homepage": "https://github.com/fingerskier/sherlock#readme",
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.2"
+  }
+}
