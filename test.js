@@ -1,8 +1,27 @@
-const fs = require('fs')
+const brain = require('brain.js')
+const path = require('path')
+const testingData = [
+  'Sherlock was',
+  'Holmes is',
+  'I was',
+  'There they were',
+]
 
-let trainingData = [];
+let netFile = process.argv[2] || './model.sherlock.json'
 
-let sherlock_text = fs.readFileSync('Sherlock.txt').toString()
-sherlock_text = sherlock_text.split(/[\.\;\:\!\?]/)
+netFile = path.resolve(netFile)
 
-// fs.writeFileSync('input.json', JSON.stringify(sherlock_text))
+let model
+
+try {
+  model = require(netFile)
+} catch (error) {
+  console.error(model)
+}
+
+const lstm = new brain.recurrent.LSTM();
+if (model) lstm.fromJSON(model)
+
+for (let testPhrase of testingData) {
+  console.log('run:', testPhrase, lstm.run(testPhrase))
+}

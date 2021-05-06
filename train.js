@@ -8,6 +8,6 @@ let dataFile = process.argv[3] || './Sherlock.txt'
 netFile = path.resolve(netFile)
 dataFile = path.resolve(dataFile)
 
-for (let I=0; I < 11795; I++) {
+for (let I=0; I < 9311; I++) {
   trainer(netFile, dataFile, I)
 }
